@@ -37,10 +37,11 @@ func StringCalculator(arg ...string) []float64 {
 
 				resultArr[i] = Addition(floatedArr)
 				break
-			}
+
 		case strings.Contains(arg[i], "/"):
 
-			{
+
+
 				arrayStr := strings.Split(arg[i], "/")
 				var floatedArr []float64
 				for i := 0; i < len(arrayStr); i++ {
@@ -49,8 +50,8 @@ func StringCalculator(arg ...string) []float64 {
 				}
 
 				resultArr[i] = Division(floatedArr)
-				break
-			}
+				fallthrough
+
 
 		case strings.Contains(arg[i], "-"):
 
@@ -70,3 +71,12 @@ func StringCalculator(arg ...string) []float64 {
 	}
 	return resultArr
 }
+
+//func changeStringToSlice(s []string) []float64  {
+//	var floatedArr []float64
+//	for i := 0; i < len(s); i++ {
+//		newNumbers, _ := strconv.ParseFloat(s[i], 64)
+//		floatedArr = append(floatedArr, newNumbers)
+//	}
+//	return floatedArr
+//}
